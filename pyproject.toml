@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "training-sync"
+version = "0.1.0"
+description = "Download Garmin Connect activity history as CSV"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = ["garminconnect>=0.3.4"]
+
+[project.optional-dependencies]
+test = ["pytest>=8.0"]
+
+[project.scripts]
+training-sync = "training_sync.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["training_sync*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
